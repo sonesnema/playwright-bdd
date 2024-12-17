@@ -83,8 +83,8 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 33600,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -92,14 +92,14 @@
                       "steps": [
                         {
                           "title": "Given I open url \"https://playwright.dev\"",
-                          "duration": 30946
+                          "duration": -1
                         }
                       ],
-                      "startTime": "2024-12-17T10:52:46.798Z",
+                      "startTime": "2024-12-17T11:21:37.092Z",
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "9139d4cfcf9d0ab6ab32-5356115c1b15c5bafd45",
@@ -114,10 +114,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-17T10:52:44.647Z",
-    "duration": 37540.813,
-    "expected": 1,
-    "skipped": 0,
+    "startTime": "2024-12-17T11:21:35.139Z",
+    "duration": 22603.519,
+    "expected": 0,
+    "skipped": 1,
     "unexpected": 0,
     "flaky": 0
   }
