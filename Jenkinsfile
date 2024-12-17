@@ -29,7 +29,7 @@ pipeline {
         stage('Read Json'){
             steps{
                    script{
-                   def projects = readJSON file: "${env.WORKSPACE}\\reports\\test-results.json"
+                   def projects = readJSON file: 'reports/test-results.json'
                 echo "${projects.suites[0].title}"
             }
             }
