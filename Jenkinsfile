@@ -37,19 +37,9 @@ pipeline {
   post {
       
 	  always {
-        //  stage('Copy Artifacts') {
-        //     steps {
-        //         copyArtifacts(
-        //             projectName: 'source-project',
-        //             selector: lastSuccessful(),
-        //             target: 'target-directory'
-        //         )
-        //     }
+        archiveArtifacts artifacts: 'reports/test-results.json'
         cleanWs()
-	  	    // emailext body: '''${SCRIPT, template="allure-report.groovy"}''',
-			// 		subject: "QC Automation -${env.JOB_NAME}",
-			// 		 to: "akpoonraj@rfxcel.com, kiruba@rfxcel.com, c_ckusumba@innominds.com, bdasari@innominds.com"
-		    // powershell "Remove-Item -Recurse -Force qc_automation/RTS7UI_Playwright_Automation/*"	
+	  	    
 	      
 	  }
 }
