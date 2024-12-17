@@ -1,17 +1,22 @@
 pipeline {
 
     agent any
-
+    environment {
+        PATH = "${env.PATH}C:/bin/allure-2.23.1/bin"
+    }
         
     stages {
 
         stage ('BuildUIAutomationTestScript') {
             steps {
+                catchError() {
+                dir("qc_automation/RTS7UI_Playwright_Automation/") {
                     echo "..........npm installing.........."
+                    bat "npm install --global cross-env"
                     bat "npm install"
                     bat "npx playwright install"
   
-        }
+        }}}
         }
         stage ('Run Test') {
 
@@ -19,28 +24,14 @@ pipeline {
                 bat "npm run test"
             }
         }
-        // stage ('PublishAllureRpt') {
-            
-        //     steps {
-        //             bat "echo %PATH%"
-        //             allure([
-        //             includeProperties: false,
-        //             jdk: '',
-        //             properties: [],
-        //             reportBuildPolicy: 'ALWAYS',
-        //             results: [[path: 'qc_automation/allure-results']]
-        //     ])
-		// 	}
-            
-}
+ 
 }
   post {
       
 	  always {
-        archiveArtifacts artifacts: 'reports/test-results.json'
+         
         cleanWs()
-	  	    
-	      
+	  	  
 	  }
 }
-// }
+  }

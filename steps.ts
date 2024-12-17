@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
-import { createBdd } from 'playwright-bdd';
+import { Given,When,Then,test } from './fixture/fixture';
 
-const { Given, When, Then } = createBdd();
+
 
 Given('I open url {string}', async ({ page }, url) => {
   await page.goto('https://www.automationexercise.com/');
@@ -19,7 +19,6 @@ Given('I open url {string}', async ({ page }, url) => {
   await page.getByRole('link', { name: 'View Cart' }).click();
   await page.getByText('Proceed To Checkout').click();
   await page.getByRole('button', { name: 'Continue On Cart' }).click();
-
 
 });
 

@@ -1,5 +1,5 @@
 // Generated from: sample.feature
-import { test } from "playwright-bdd";
+import { test } from "../fixture/fixture.ts";
 
 test.describe('Playwright site', () => {
 
@@ -10,6 +10,8 @@ test.describe('Playwright site', () => {
 });
 
 // == technical section ==
+
+test.beforeEach('BeforeEach Hooks', ({ $beforeEach }) => {});
 
 test.use({
   $test: ({}, use) => use(test),

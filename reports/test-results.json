@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 1,
+    "maxFailures": 0,
     "metadata": {
       "actualWorkers": 1
     },
@@ -46,13 +46,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 600000
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.49.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -75,7 +75,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 600000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "",
@@ -83,23 +83,27 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "skipped",
-                      "duration": 0,
+                      "status": "passed",
+                      "duration": 11156,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Execution Starting on Check title\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
                       "steps": [
                         {
                           "title": "Given I open url \"https://playwright.dev\"",
-                          "duration": -1
+                          "duration": 10790
                         }
                       ],
-                      "startTime": "2024-12-17T11:21:37.092Z",
+                      "startTime": "2024-12-17T13:34:24.949Z",
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "9139d4cfcf9d0ab6ab32-5356115c1b15c5bafd45",
@@ -114,10 +118,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-17T11:21:35.139Z",
-    "duration": 22603.519,
-    "expected": 0,
-    "skipped": 1,
+    "startTime": "2024-12-17T13:34:22.999Z",
+    "duration": 13495.019999999999,
+    "expected": 1,
+    "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   }
