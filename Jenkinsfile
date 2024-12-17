@@ -22,7 +22,10 @@ pipeline {
 
             steps{
                 bat "npm run test"
-                def projects = readJSON file: "${env.WORKSPACE}\\reports\\test-results.json"
+             
+            }
+            script{
+                   def projects = readJSON file: "${env.WORKSPACE}\\reports\\test-results.json"
                 echo "${projects.suites[0].title}"
             }
         }
