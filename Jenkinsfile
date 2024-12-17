@@ -24,9 +24,14 @@ pipeline {
                 bat "npm run test"
              
             }
-            script{
+         
+        }
+        stage('Read Json'){
+            steps{
+                   script{
                    def projects = readJSON file: "${env.WORKSPACE}\\reports\\test-results.json"
                 echo "${projects.suites[0].title}"
+            }
             }
         }
  
