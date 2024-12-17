@@ -9,14 +9,11 @@ pipeline {
 
         stage ('BuildUIAutomationTestScript') {
             steps {
-                 {
-                 
                     echo "..........npm installing.........."
-                    bat "npm install --global cross-env"
                     bat "npm install"
                     bat "npx playwright install"
   
-        }}
+        }
         }
         stage ('Run Test') {
 
