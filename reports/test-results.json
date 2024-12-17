@@ -1,4 +1,4 @@
-{
+  {
   "config": {
     "configFile": "E:\\coding\\VitalPlaywrightBDD\\playwright.config.ts",
     "rootDir": "E:/coding/VitalPlaywrightBDD/.features-gen",
