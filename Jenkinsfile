@@ -1,3 +1,4 @@
+def roundValue=3.57778
 pipeline {
 
     agent any
@@ -31,6 +32,8 @@ pipeline {
                    script{
                    def projects = readJSON file: 'reports/test-results.json'
                 echo "${projects.suites[0].title}"
+                roundValue=roundValue.round(3)
+                echo "${roundValue}"
             }
             }
         }
