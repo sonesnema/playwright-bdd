@@ -32,8 +32,9 @@ pipeline {
                    script{
                    def projects = readJSON file: 'reports/test-results.json'
                 echo "${projects.suites[0].title}"
-                roundValue=roundValue.round(2)
+                roundValue=roundValue.toBigDecimal().setScale(2,BigDecimal.ROUND_HALF_UP)
                 echo "${roundValue}"
+                roundValue=roundValue.toFixed(2)
             }
             }
         }
