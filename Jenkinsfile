@@ -32,7 +32,7 @@ pipeline {
                    script{
                    def projects = readJSON file: 'reports/test-results.json'
                 echo "${projects.suites[0].title}"
-                roundValue=roundValue.round(3)
+                roundValue=Math.round(roundValue*100)/100
                 echo "${roundValue}"
             }
             }
