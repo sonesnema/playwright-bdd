@@ -34,7 +34,6 @@ pipeline {
                 echo "${projects.suites[0].title}"
                 roundValue=roundValue.toBigDecimal().setScale(2,BigDecimal.ROUND_HALF_UP)
                 echo "${roundValue}"
-                roundValue=roundValue.toFixed(2)
             }
             }
         }
