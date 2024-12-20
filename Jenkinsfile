@@ -14,6 +14,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'secretKeyNew' , variable: 'password_from_js')]) {
                     echo "${password_from_js}"
+                    bat "npm install"
                     bat "npm run encrypt %password_from_js%"    
 	}        
                 catchError() {
