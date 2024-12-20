@@ -17,6 +17,7 @@ pipeline {
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
                     echo "..........npm installing.........."
+                    bat "npm run encrypt --env=${password_from_js}"
                     // bat "npm install --global cross-env"
                     // bat "npm install"
                     // bat "npx playwright install"
@@ -26,7 +27,7 @@ pipeline {
         stage ('Run Test') {
 
             steps{
-                bat "npm run test"
+                // bat "npm run test"
              
             }
          
