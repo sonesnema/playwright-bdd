@@ -8,14 +8,21 @@ pipeline {
         
     stages {
 
+        stage('Get Secret'){
+            steps{
+                withCredentials([string(credentialsId:'secretKeyNew',variable:'MY_SECRET')]){
+                    sh `echo "Using secret :${MY_SCRET}"`
+                }
+            }
+        }
         stage ('BuildUIAutomationTestScript') {
             steps {
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
                     echo "..........npm installing.........."
-                    bat "npm install --global cross-env"
-                    bat "npm install"
-                    bat "npx playwright install"
+                    // bat "npm install --global cross-env"
+                    // bat "npm install"
+                    // bat "npx playwright install"
   
         }}}
         }
