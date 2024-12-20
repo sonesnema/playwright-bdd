@@ -11,6 +11,9 @@ pipeline {
         
         stage ('BuildUIAutomationTestScript') {
             steps {
+                withCredentials([string(credentialsId: 'secretKeyNew' , variable: 'password_from_js')]) {
+	 shell_output = sh(script: """  echo ${password_from_js} > write_to_file """, returnStdout: true ).trim()
+	}        
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
                     echo "..........npm installing.........."
