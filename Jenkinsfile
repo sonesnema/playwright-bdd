@@ -8,13 +8,7 @@ pipeline {
         
     stages {
 
-        stage('Get Secret'){
-            steps{
-                withCredentials([string(credentialsId:'secretKeyNew',variable:'MY_SECRET')]){
-                    echo "Using secret :${MY_SCRET}"
-                }
-            }
-        }
+        
         stage ('BuildUIAutomationTestScript') {
             steps {
                 catchError() {
