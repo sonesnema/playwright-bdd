@@ -11,7 +11,7 @@ pipeline {
         stage('Get Secret'){
             steps{
                 withCredentials([string(credentialsId:'secretKeyNew',variable:'MY_SECRET')]){
-                    sh `echo "Using secret :${MY_SCRET}"`
+                    sh 'echo "Using secret :${MY_SCRET}"'
                 }
             }
         }
