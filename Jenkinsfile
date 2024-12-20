@@ -14,9 +14,9 @@ pipeline {
         stage ('BuildUIAutomationTestScript') {
             steps {
                 withCredentials([string(credentialsId: 'secretKeyNew' , variable: 'password_from_js')]) {
-                    echo "${password_from_js}"
+                    
                     bat "npm install"
-                    bat "npm run encrypt --env=%password_from_js%"    
+                    bat "npm run encrypt --env=%EXAMPLE_KEY%"    
 	}        
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
