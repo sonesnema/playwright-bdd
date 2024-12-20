@@ -28,6 +28,7 @@ pipeline {
 
             steps{
                 // bat "npm run test"
+                echo "..........npm installing.........."
              
             }
          
