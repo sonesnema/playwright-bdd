@@ -5,6 +5,7 @@ pipeline {
     agent any
     environment {
         PATH = "${env.PATH}C:/bin/allure-2.23.1/bin"
+        EXAMPLE_KEY = credentials('SECRET_KEY') // Secret value is 'sec%ret'
     }
         
     stages {
@@ -15,7 +16,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'secretKeyNew' , variable: 'password_from_js')]) {
                     echo "${password_from_js}"
                     bat "npm install"
-                    bat "npm run encrypt %password_from_js%"    
+                    bat "npm run encrypt --env=%password_from_js%"    
 	}        
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
