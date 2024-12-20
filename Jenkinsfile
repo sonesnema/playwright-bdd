@@ -14,12 +14,12 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'secretKeyNew' , variable: 'password_from_js')]) {
                     echo "${password_from_js}"
-                    keyFromJenkin=${password_from_js}
+                    bat "npm run encrypt ${password_from_js}"
 	}        
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
                     echo "..........npm installing.........."
-                    bat "npm run encrypt --env=${keyFromJenkin}"
+    
                     // bat "npm install --global cross-env"
                     // bat "npm install"
                     // bat "npx playwright install"
