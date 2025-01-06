@@ -16,7 +16,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'secretKeyNew' , variable: 'password_from_js')]) {
                     
                     bat "npm install"
-                    bat "npm run encrypt --env=%EXAMPLE_KEY%"    
+                    bat "npm run encrypt -- --arg=%EXAMPLE_KEY%"    
 	}        
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
@@ -40,10 +40,10 @@ pipeline {
         stage('Read Json'){
             steps{
                    script{
-                   def projects = readJSON file: 'reports/test-results.json'
-                echo "${projects.suites[0].title}"
-                roundValue=roundValue.toBigDecimal().setScale(2,BigDecimal.ROUND_HALF_UP)
-                echo "${roundValue}"
+                //    def projects = readJSON file: 'reports/test-results.json'
+                // echo "${projects.suites[0].title}"
+                // roundValue=roundValue.toBigDecimal().setScale(2,BigDecimal.ROUND_HALF_UP)
+                // echo "${roundValue}"
             }
             }
         }
@@ -53,7 +53,7 @@ pipeline {
       
 	  always {
         
-         archiveArtifacts artifacts: 'reports/test-results.json'
+        //  archiveArtifacts artifacts: 'reports/test-results.json'
         cleanWs()
 	  	  
 	  }
