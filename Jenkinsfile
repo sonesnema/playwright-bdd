@@ -16,7 +16,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'secretKeyNew' , variable: 'password_from_js')]) {
                     
                     bat "npm install"
-                    bat "npm run encrypt ""%EXAMPLE_KEY%"    
+                    bat "npm run encrypt \"%EXAMPLE_KEY%\""    
 	}        
                 catchError() {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
