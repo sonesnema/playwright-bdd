@@ -22,9 +22,10 @@ pipeline {
                 dir("qc_automation/RTS7UI_Playwright_Automation/") {
                     echo "..........npm installing.........."
     
-                    // bat "npm install --global cross-env"
-                    // bat "npm install"
-                    // bat "npx playwright install"
+                    bat "npm install --global cross-env"
+                    bat "npm install"
+                    bat "npx playwright install"
+                    
   
         }}}
         }
@@ -33,6 +34,7 @@ pipeline {
             steps{
                 // bat "npm run test"
                 echo "..........npm installing.........."
+                bat "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
              
             }
          

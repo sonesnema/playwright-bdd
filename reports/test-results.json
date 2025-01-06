@@ -1,4 +1,4 @@
-  {
+{
   "config": {
     "configFile": "E:\\coding\\VitalPlaywrightBDD\\playwright.config.ts",
     "rootDir": "E:/coding/VitalPlaywrightBDD/.features-gen",
@@ -84,11 +84,14 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 11156,
+                      "duration": 10167,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "Execution Starting on Check title\n"
+                        },
+                        {
+                          "text": "test\n"
                         }
                       ],
                       "stderr": [],
@@ -96,10 +99,10 @@
                       "steps": [
                         {
                           "title": "Given I open url \"https://playwright.dev\"",
-                          "duration": 10790
+                          "duration": 9141
                         }
                       ],
-                      "startTime": "2024-12-17T13:34:24.949Z",
+                      "startTime": "2025-01-06T11:02:13.188Z",
                       "attachments": []
                     }
                   ],
@@ -118,8 +121,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-17T13:34:22.999Z",
-    "duration": 13495.019999999999,
+    "startTime": "2025-01-06T11:02:11.167Z",
+    "duration": 12622.959,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
