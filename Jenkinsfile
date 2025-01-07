@@ -34,9 +34,10 @@ pipeline {
             steps{
                 // bat "npm run test"
                 echo "..........npm installing.........."
-                sh """#!/bin/bash
-                 "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
-                 """
+                 bat "npm run encrypt \"%EXAMPLE_KEY%\"" 
+                // sh """#!/bin/bash
+                //  "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
+                //  """
              
             }
          
