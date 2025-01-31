@@ -50,6 +50,7 @@ pipeline {
 
                     if(arrayProd[0]=='ComplianceCatalyst')
                     {
+                        echo "${arrayProd[0]}"
                         echo "first object is compliance catalyst"
                     }
                     else{
