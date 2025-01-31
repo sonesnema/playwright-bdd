@@ -47,6 +47,8 @@ pipeline {
                     def stringTake="${params.commaSeperated}"
                     echo "${stringTake}"
                     def arrayProd = stringTake.split(',')
+                    echo arrayProd.size()
+
 
                     if(arrayProd[0]=='ComplianceCatalyst')
                     {
