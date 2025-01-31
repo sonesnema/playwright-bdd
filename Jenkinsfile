@@ -34,7 +34,7 @@ pipeline {
             steps{
                 // bat "npm run test"
                 echo "..........npm installing.........."
-                 bat "npm run encrypt \"%EXAMPLE_KEY%\"" 
+                //  bat "npm run encrypt \"%EXAMPLE_KEY%\"" 
                   echo "printing deafult value"
                     echo "${params.commaSeperated}"
                 // sh """#!/bin/bash
