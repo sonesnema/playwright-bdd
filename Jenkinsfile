@@ -50,7 +50,7 @@ pipeline {
                     {
                         echo "first object is compliance catalyst"
                     }
-                    elas{
+                    else{
                         echo "first object is not compliance catatlyt "
                     }
 
