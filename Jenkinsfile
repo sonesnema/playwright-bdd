@@ -1,5 +1,6 @@
 def roundValue=3.57778
 def keyFromJenkin
+def arryaProd
 pipeline {
 
     agent any
@@ -32,18 +33,18 @@ pipeline {
         stage ('Run Test') {
 
             steps{
-                step{
+            
                 // bat "npm run test"
                 echo "..........npm installing.........."
                 //  bat "npm run encrypt \"%EXAMPLE_KEY%\"" 
                 echo "printing deafult value"
                 echo "${params.commaSeperated}"
-                    def arryaProd="${params.commaSeperated}"
-                    echo "${arryaProd[0]}"
+                arryaProd="${params.commaSeperated}"
+                echo "${arryaProd[0]}"
                 // sh """#!/bin/bash
                 //  "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
                 //  """
-                }
+                
             }
          
         }
