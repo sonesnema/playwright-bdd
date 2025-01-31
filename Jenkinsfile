@@ -8,10 +8,7 @@ pipeline {
         PATH = "${env.PATH}C:/bin/allure-2.23.1/bin"
         EXAMPLE_KEY = credentials('NEW_SECRET') // Secret value is 'sec%ret'
     }
-      parameters {
-        
-        string(name: 'INDEX', defaultValue: '1', description: 'Enter index (0-based)')
-    }   
+     
     stages {
 
         
@@ -49,31 +46,21 @@ pipeline {
                 script {
                     def arrayProd = params.commaSeparated.split(',')
 
-                    // Convert index to integer
-                    def index = params.INDEX.toInteger()
-
-                    // Check if index is within valid range
-                    if (index >= 0 && index < arrayProd.size()) {
-                        def selectedValue = arrayProd[index]
-                        echo "Selected Value at Index ${index}: ${selectedValue}"
-                    } else {
-                        echo "Index out of bounds! Valid range: 0 to ${arrayProd.size() - 1}"
+                    if(arrayPod[0]=='ComplianceCatalyst')
+                    {
+                        echo "first object is compliance catalyst"
                     }
+                    elas{
+                        echo "first object is not compliance catatlyt "
+                    }
+
+                    
                 }
                 
             }
          
         }
-        stage('Read Json'){
-            steps{
-                   script{
-                //    def projects = readJSON file: 'reports/test-results.json'
-                echo "test"
-                // roundValue=roundValue.toBigDecimal().setScale(2,BigDecimal.ROUND_HALF_UP)
-                // echo "${roundValue}"
-            }
-            }
-        }
+        
  
 }
   post {
