@@ -46,7 +46,7 @@ pipeline {
                 script {
                     def arrayProd = "${params.commaSeparated}".split(',')
 
-                    if(arrayPod[0]=='ComplianceCatalyst')
+                    if(arrayProd[0]=='ComplianceCatalyst')
                     {
                         echo "first object is compliance catalyst"
                     }
