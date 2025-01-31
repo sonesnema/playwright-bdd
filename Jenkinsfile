@@ -46,6 +46,20 @@ pipeline {
                 // sh """#!/bin/bash
                 //  "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
                 //  """
+                script {
+                    def arrayProd = params.commaSeparated.split(',')
+
+                    // Convert index to integer
+                    def index = params.INDEX.toInteger()
+
+                    // Check if index is within valid range
+                    if (index >= 0 && index < arrayProd.size()) {
+                        def selectedValue = arrayProd[index]
+                        echo "Selected Value at Index ${index}: ${selectedValue}"
+                    } else {
+                        echo "Index out of bounds! Valid range: 0 to ${arrayProd.size() - 1}"
+                    }
+                }
                 
             }
          
