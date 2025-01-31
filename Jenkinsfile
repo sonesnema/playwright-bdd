@@ -37,6 +37,8 @@ pipeline {
                 //  bat "npm run encrypt \"%EXAMPLE_KEY%\"" 
                   echo "printing deafult value"
                     echo "${params.commaSeperated}"
+                    def arryaProd="${params.commaSeperated}"
+                    echo "${arryaProd[0]}"
                 // sh """#!/bin/bash
                 //  "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
                 //  """
