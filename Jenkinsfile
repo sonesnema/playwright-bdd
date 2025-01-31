@@ -44,7 +44,7 @@ pipeline {
                 //  "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
                 //  """
                 script {
-                    def stringTake=params.commaSeparated
+                    def stringTake="${params.commaSeperated}"
                     echo "${stringTake}"
                     def arrayProd = stringTake.split(',')
 
