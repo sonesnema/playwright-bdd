@@ -44,7 +44,9 @@ pipeline {
                 //  "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
                 //  """
                 script {
-                    def arrayProd = "${params.commaSeparated}".split(',')
+                    def stringTake=params.commaSeparated
+                    echo "${stringTake}"
+                    def arrayProd = stringTake.split(',')
 
                     if(arrayProd[0]=='ComplianceCatalyst')
                     {
