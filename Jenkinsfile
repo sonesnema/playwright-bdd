@@ -32,17 +32,18 @@ pipeline {
         stage ('Run Test') {
 
             steps{
+                step{
                 // bat "npm run test"
                 echo "..........npm installing.........."
                 //  bat "npm run encrypt \"%EXAMPLE_KEY%\"" 
-                  echo "printing deafult value"
-                    echo "${params.commaSeperated}"
+                echo "printing deafult value"
+                echo "${params.commaSeperated}"
                     def arryaProd="${params.commaSeperated}"
                     echo "${arryaProd[0]}"
                 // sh """#!/bin/bash
                 //  "SECRET=\"%EXAMPLE_KEY%\" npx bddgen && npx playwright test"
                 //  """
-             
+                }
             }
          
         }
