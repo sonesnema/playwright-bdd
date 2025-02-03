@@ -54,6 +54,10 @@ pipeline {
                     {
                         echo "${arrayProd[0]}"
                         echo "first object is compliance catalyst"
+                        if(arrayProd[0].contains('Compliance'))
+                        {
+                            echo "first object contain compliance"
+                        }
                     }
                     else{
                         echo "first object is not compliance catatlyt "
